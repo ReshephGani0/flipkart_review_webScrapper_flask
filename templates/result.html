@@ -1,0 +1,31 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+{% block body %}
+        <table>
+            <thead>
+            <th>product</th>
+            <th>name</th>
+            <th>rating</th>
+            <th>heading</th>
+            <th>comment</th>
+            </thead>
+            <tbody>
+                {%for review in reviews%}
+                <tr>
+                    <td>{{review['product']}}</td>
+                    <td>{{ review['name'] }}</td>
+                    <td>{{ review['rating'] }}</td>
+                    <td>{{ review['heading'] }}</td>
+                    <td>{{ review['comment'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+{%endblock%}
+    </body>
+
+</html>
