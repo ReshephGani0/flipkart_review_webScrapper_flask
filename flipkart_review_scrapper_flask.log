@@ -1,5 +1,5 @@
-2023-05-11 13:51:27,903 8115 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2023-05-11 14:47:48,813 782 INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5000
  * Running on http://172.18.0.7:5000
-2023-05-11 13:51:27,903 8115 INFO [33mPress CTRL+C to quit[0m
+2023-05-11 14:47:48,813 782 INFO [33mPress CTRL+C to quit[0m

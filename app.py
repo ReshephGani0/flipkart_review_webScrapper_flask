@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup as bs
 import requests
 from urllib.request import urlopen
 import logging
+from pymongo.mongo_client import MongoClient
 logging.basicConfig(filename = "flipkart_review_scrapper_flask.log", level = logging.INFO, filemode='w',format='%(asctime)s %(process)d %(levelname)s %(message)s')
 #logging filemode='w' will earse everthing inside then start loging
 
@@ -96,6 +97,16 @@ def result_review_func():
             fw.write(str(reviews)) # file write() only let str type to print
             fw.close()
             
+
+            uri = "mongodb+srv://pwskills:pwskills1@cluster0.xe9xplu.mongodb.net/?retryWrites=true&w=majority"
+            # Create a new client and connect to the server
+            client = MongoClient(uri)
+            # Send a ping to confirm a successful connection
+            db = client['flip_rev_scrap']
+            coll_flipkart_1 = db['flipkt_product_review']
+            coll_flipkart_1.insert_many(reviews)
+            #coll_flipkart_1.drop()
+
             #return "<h1>Hello, World!</h1>"
             #return render_template("result.html")
             #return render_template("result.html",reviews) # render_template() can't pass dataset like this
